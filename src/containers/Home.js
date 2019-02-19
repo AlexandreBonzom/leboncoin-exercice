@@ -101,47 +101,68 @@ class Home extends React.Component {
   };
 
   render() {
-    if (this.state.offers.length > 0) {
-      return (
-        <div className="main-section">
-          <SearchBar
-            title={this.state.titleSearched}
-            priceMin={this.state.priceMin}
-            priceMax={this.state.priceMax}
-            sorted={this.state.sorted}
-            handleChangeSearch={this.handleChangeSearch}
-            handleSearchClick={this.handleSearchClick}
-          />
-          <ul className="product-list">
-            {this.state.offers.map(product => {
-              return (
-                <li key={product._id}>
-                  <Link to={"offer/" + product._id}>
-                    <ProductArticle productInfo={product} />
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-          <Pagination
-            totalPages={this.state.totalPages}
-            page={this.state.page}
-            handleChangePage={this.handleChangePage}
-          />
-        </div>
-      );
+    if (this.props.token) {
+      if (this.state.offers.length > 0) {
+        return (
+          <div className="main-section">
+            <SearchBar
+              title={this.state.titleSearched}
+              priceMin={this.state.priceMin}
+              priceMax={this.state.priceMax}
+              sorted={this.state.sorted}
+              handleChangeSearch={this.handleChangeSearch}
+              handleSearchClick={this.handleSearchClick}
+            />
+            <ul className="product-list">
+              {this.state.offers.map(product => {
+                return (
+                  <li key={product._id}>
+                    <Link to={"offer/" + product._id}>
+                      <ProductArticle productInfo={product} />
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <Pagination
+              totalPages={this.state.totalPages}
+              page={this.state.page}
+              handleChangePage={this.handleChangePage}
+            />
+          </div>
+        );
+      } else {
+        return (
+          <div className="main-section">
+            <SearchBar
+              title={this.state.titleSearched}
+              priceMin={this.state.priceMin}
+              priceMax={this.state.priceMax}
+              sorted={this.state.sorted}
+              handleChangeSearch={this.handleChangeSearch}
+              handleSearchClick={this.handleSearchClick}
+            />{" "}
+            <div>Aucun Resultat Disponible.</div>
+          </div>
+        );
+      }
     } else {
       return (
-        <div className="main-section">
-          <SearchBar
-            title={this.state.titleSearched}
-            priceMin={this.state.priceMin}
-            priceMax={this.state.priceMax}
-            sorted={this.state.sorted}
-            handleChangeSearch={this.handleChangeSearch}
-            handleSearchClick={this.handleSearchClick}
-          />{" "}
-          <div>Aucun Resultat Disponible.</div>
+        <div className="main-section-log-out">
+          <span>
+            Veuillez vous connecter ou vous inscrire avant de continuer sur
+            notre site
+          </span>
+          <div>
+            {" "}
+            <Link to="log_in">
+              <button> Se Connecter </button>
+            </Link>
+            <Link to="sign_up">
+              {" "}
+              <button> S'Inscrire </button>
+            </Link>
+          </div>
         </div>
       );
     }

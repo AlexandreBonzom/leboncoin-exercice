@@ -281,3 +281,211 @@ h3 {
   height: 40px;
   border-radius: 3px;
 }
+
+/* HOME LOG OUT */
+.main-section-log-out {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  font-weight: bold;
+  padding-top: 100px;
+}
+
+.main-section-log-out button {
+  color: white;
+  background-color: #4183d7;
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
+  margin: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Log In */
+.log-in-container {
+  background-color: #fafafa;
+  height: calc(100vh - 60px);
+}
+
+.log-in-container form {
+  width: 1024px;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 20px 0;
+}
+
+.log-in-container form .connexion {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  text-align: center;
+  border-bottom: solid 3px #f56c29;
+  width: 50%;
+}
+
+.log-in-container form span {
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+  text-align: left;
+  width: 50%;
+  margin: 10px 0;
+}
+
+.log-in-container form .not-display {
+  display: none;
+}
+.log-in-container form .display {
+  color: red;
+}
+
+.log-in-container form input {
+  text-align: left;
+  width: 50%;
+  height: 40px;
+  border-radius: 3px;
+  border: solid 1px #cad1d9;
+  font-size: 13px;
+  line-height: 19px;
+  margin: 10px 0;
+  padding-left: 10px;
+}
+.log-in-container form .submit {
+  color: white;
+  background-color: #4183d7;
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
+  margin: 20px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+.log-in-container form .no-count {
+  text-align: center;
+  padding-top: 30px;
+  border-top: #cad1d9 solid 1px;
+}
+
+.log-in-container form button {
+  color: #4183d7;
+  background-color: white;
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: solid 3px #4183d7;
+  margin: 20px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 50%;
+}
+/* Sign Up*/
+.sign_up-container {
+  background-color: #fafafa;
+  height: calc(100vh - 60px);
+}
+
+.sign_up-container form {
+  width: 1024px;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 20px 0;
+}
+
+.sign_up-container form .create-account {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  text-align: center;
+  border-bottom: solid 3px #f56c29;
+  width: 50%;
+}
+.sign_up-container form .password-line {
+  width: 50%;
+  display: flex;
+}
+.sign_up-container form .password-left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  padding-right: 10px;
+}
+.sign_up-container form .password-right {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  padding-right: 10px;
+}
+.sign_up-container form .password-left span,
+.sign_up-container form .password-left input,
+.sign_up-container form .password-right span,
+.sign_up-container form .password-right input {
+  width: 100%;
+}
+
+.sign_up-container form span {
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+  text-align: left;
+  width: 50%;
+  margin: 10px 0;
+}
+
+.sign_up-container form input {
+  text-align: left;
+  width: 50%;
+  height: 40px;
+  border-radius: 3px;
+  border: solid 1px #cad1d9;
+  font-size: 13px;
+  line-height: 19px;
+  margin: 10px 0;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.sign_up-container form .submit {
+  color: white;
+  background-color: #4183d7;
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
+  margin: 20px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.sign_up-container form .not-display {
+  display: none;
+}
+.sign_up-container form .display {
+  color: red;
+}
+.sign_up-container form .not-display-pwd {
+  display: none;
+}
+.sign_up-container form .display-pwd {
+  color: red;
+}

@@ -5,7 +5,9 @@ import Offer from "./containers/Offer";
 import SignUp from "./containers/SignUp";
 import Header from "./components/Header";
 import LogIn from "./containers/LogIn";
+
 import Cookies from "js-cookie";
+import Profile from "./containers/Profile";
 
 import "./App.css";
 
@@ -17,14 +19,25 @@ class App extends Component {
   };
 
   handleLogIn = (token, userId, username) => {
-    const newToken = Cookies.set("token", token);
-    const newUserId = Cookies.set("user_id", userId);
-    const newUsername = Cookies.set("username", username);
+    Cookies.set("token", token);
+    Cookies.set("user_id", userId);
+    Cookies.set("username", username);
     this.setState({
-      userId: newUserId,
-      token,
-      newToken,
-      username: newUsername
+      userId: Cookies.get("token"),
+      token: Cookies.get("token"),
+      username: Cookies.get("username")
+    });
+  };
+
+  handleLogOut = () => {
+    Cookies.remove("user_id");
+    Cookies.remove("token");
+    Cookies.remove("username");
+
+    this.setState({
+      userId: "",
+      token: "",
+      username: ""
     });
   };
 
@@ -34,18 +47,36 @@ class App extends Component {
         <div className="page-container">
           <BrowserRouter>
             <>
-              <Header isLoged={true} />
+              <Header
+                isLoged={true}
+                username={this.state.username}
+                handleLogOut={this.handleLogOut}
+              />
 
               <Switch>
                 <Route
                   exact={true}
                   path="/"
-                  render={props => <Home {...props} />}
+                  render={props => <Home {...props} token={this.state.token} />}
                 />
                 <Route
                   path="/offer/:id"
                   render={props => <Offer {...props} />}
                 />
+
+                <Route
+                  path="/profile/:id"
+                  render={props => <Profile {...props} />}
+                />
+                <Route
+                  path="/log_in"
+                  render={props => (
+                    <LogIn
+                      {...props}
+                      handleLogin={this.handleLogIn}
+                      token={this.state.token}
+                    />
+                  )}
                 />
               </Switch>
             </>
@@ -60,6 +91,11 @@ class App extends Component {
               <Header isLoged={false} />
 
               <Switch>
+                <Route
+                  exact={true}
+                  path="/"
+                  render={props => <Home {...props} />}
+                />
                 <Route
                   path="/sign_up"
                   render={props => <SignUp {...props} />}

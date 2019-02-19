@@ -24,6 +24,34 @@ class Header extends React.Component {
             <div className="right-header">
               {" "}
               <div className="header-tab">
+                <i className="fas fa-user-circle" />
+                <span>{this.props.username}</span>
+              </div>
+              <div className="header-tab" onClick={this.props.handleLogOut}>
+                Se Deconnecter
+              </div>
+            </div>
+          </div>
+        </header>
+      );
+    } else {
+      return (
+        <header>
+          <div className="header">
+            <div className="left-header">
+              <div className="logo-leboncoin">
+                <Link to="/">
+                  {" "}
+                  <img
+                    src="https://weborama.com/wp-content/uploads/2017/08/leboncoin-logo-blanc.png"
+                    alt="logo-leboncoin"
+                  />{" "}
+                </Link>
+              </div>{" "}
+            </div>
+            <div className="right-header">
+              {" "}
+              <div className="header-tab">
                 <Link to="/sign_up">Creer un compte</Link>
               </div>
               <div className="header-tab">
