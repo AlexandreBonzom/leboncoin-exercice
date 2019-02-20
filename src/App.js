@@ -5,7 +5,7 @@ import Offer from "./containers/Offer";
 import SignUp from "./containers/SignUp";
 import Header from "./components/Header";
 import LogIn from "./containers/LogIn";
-
+import Publish from "./containers/Publish";
 import Cookies from "js-cookie";
 import Profile from "./containers/Profile";
 
@@ -42,76 +42,49 @@ class App extends Component {
   };
 
   render() {
-    if (this.state.token) {
-      return (
-        <div className="page-container">
-          <BrowserRouter>
-            <>
-              <Header
-                isLoged={true}
-                username={this.state.username}
-                handleLogOut={this.handleLogOut}
+    return (
+      <div className="page-container">
+        <BrowserRouter>
+          <>
+            <Header
+              username={this.state.username}
+              handleLogOut={this.handleLogOut}
+              token={this.state.token}
+            />
+
+            <Switch>
+              <Route
+                exact={true}
+                path="/"
+                render={props => <Home {...props} token={this.state.token} />}
               />
-
-              <Switch>
-                <Route
-                  exact={true}
-                  path="/"
-                  render={props => <Home {...props} token={this.state.token} />}
-                />
-                <Route
-                  path="/offer/:id"
-                  render={props => <Offer {...props} />}
-                />
-
-                <Route
-                  path="/profile/:id"
-                  render={props => <Profile {...props} />}
-                />
-                <Route
-                  path="/log_in"
-                  render={props => (
-                    <LogIn
-                      {...props}
-                      handleLogin={this.handleLogIn}
-                      token={this.state.token}
-                    />
-                  )}
-                />
-              </Switch>
-            </>
-          </BrowserRouter>
-        </div>
-      );
-    } else {
-      return (
-        <div className="page-container">
-          <BrowserRouter>
-            <>
-              <Header isLoged={false} />
-
-              <Switch>
-                <Route
-                  exact={true}
-                  path="/"
-                  render={props => <Home {...props} />}
-                />
-                <Route
-                  path="/sign_up"
-                  render={props => <SignUp {...props} />}
-                />
-                <Route
-                  path="/log_in"
-                  render={props => (
-                    <LogIn {...props} handleLogin={this.handleLogIn} />
-                  )}
-                />
-              </Switch>
-            </>
-          </BrowserRouter>
-        </div>
-      );
-    }
+              <Route path="/sign_up" render={props => <SignUp {...props} />} />
+              <Route path="/offer/:id" render={props => <Offer {...props} />} />
+              <Route
+                path="/log_in"
+                render={props => (
+                  <LogIn
+                    {...props}
+                    handleLogin={this.handleLogIn}
+                    token={this.state.token}
+                  />
+                )}
+              />
+              <Route
+                path="/profile/:id"
+                render={props => <Profile {...props} />}
+              />
+              <Route
+                path="/publish"
+                render={props => (
+                  <Publish {...props} token={this.state.token} />
+                )}
+              />
+            </Switch>
+          </>
+        </BrowserRouter>
+      </div>
+    );
   }
 }
 

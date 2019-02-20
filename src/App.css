@@ -1,4 +1,5 @@
 @import "reset.css";
+
 .page-container {
   background-color: #fafafa;
   font-family: "Open Sans", sans-serif;
@@ -45,7 +46,9 @@ h3 {
 .header .right-header .header-tab {
   height: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
   border-style: solid;
   border-color: white;
   padding: 0 20px;
@@ -94,8 +97,21 @@ h3 {
   height: calc(130px - 20px);
   background-color: #fafafa;
 }
+.product-article .img-product div {
+  height: 100%;
+  width: 100%;
+}
+
+.product-article .img-product img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
 .product-article .product-information {
   padding: 0px 20px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .product-article .product-name {
@@ -181,8 +197,31 @@ h3 {
 
 .offer-picture {
   width: 100%;
-  height: 385px;
+  min-height: 385px;
+
   background-color: #d7d0d0;
+}
+
+.offer-picture .unique-image {
+  width: 100%;
+  height: 385px;
+  object-fit: cover;
+}
+.offer-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Carousel */
+.carousel .thumbs-wrapper {
+  margin: 0;
+  background-color: white;
+}
+
+.carousel .thumb {
+  margin-right: 0px;
+  border: none;
 }
 
 .offer-creator {
@@ -488,4 +527,113 @@ h3 {
 }
 .sign_up-container form .display-pwd {
   color: red;
+}
+
+/* publish */
+
+.publish-container {
+  min-height: calc(100vh - 60px);
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+}
+
+.publish-container .publication {
+  display: flex;
+  flex-direction: column;
+  width: 1024px;
+  margin: 20px auto;
+  background-color: white;
+  border: solid 1px #eeeeee;
+}
+
+.publish-container .publication .main-info-publication .image-article {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.publish-container .publication .main-info-publication .fa-times-circle {
+  position: absolute;
+  right: 10px;
+  color: orange;
+}
+
+.publish-container .publication .header-publication {
+  color: white;
+  background-color: #666666;
+  padding: 10px;
+}
+
+.publish-container .publication .main-info-publication {
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.publish-container .publication .main-info-publication input {
+  height: 30px;
+  font-size: 13px;
+  line-height: 19px;
+  margin: 10px 0;
+  border-radius: 3px;
+  border: solid 1px #eeeeee;
+  padding-left: 5px;
+}
+.publish-container .publication .main-info-publication textarea {
+  border: solid 1px #eeeeee;
+  border-radius: 3px;
+  font-size: 13px;
+  line-height: 19px;
+  margin: 10px 0;
+  padding-left: 5px;
+}
+
+.publish-container
+  .publication
+  .main-info-publication
+  .react-file-reader-button {
+  height: 30px;
+  background-color: #eeeeee;
+  border: solid 1px #cacaca;
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+  border-radius: 3px;
+
+  width: 40%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.publish-container .publication .main-info-publication button {
+  height: 40px;
+  color: white;
+  background-color: #4183d7;
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
+  width: 80%;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.publish-container .publication .main-info-publication ul {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.publish-container .publication .main-info-publication li img {
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  border: solid 1px #eeeeee;
 }
