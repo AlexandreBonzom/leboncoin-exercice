@@ -205,12 +205,17 @@ h3 {
 .offer-picture .unique-image {
   width: 100%;
   height: 385px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .offer-picture img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.offer-picture .slider-wrapper img {
+  height: 385px;
+  object-fit: contain;
 }
 
 /* Carousel */
@@ -636,4 +641,40 @@ h3 {
   height: 100px;
   margin-right: 10px;
   border: solid 1px #eeeeee;
+}
+
+/* my-accounts */
+
+.profile-container {
+  display: flex;
+}
+
+.profile-container .profile {
+  width: 1024px;
+  margin: 20px auto;
+  display: flex;
+}
+
+.profile-container .profile .resume-my-offers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 65%;
+  background-color: white;
+  margin-right: 20px;
+}
+
+.profile-container .profile .my-offers {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  text-align: center;
+  border-bottom: solid 3px #f56c29;
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+.profile-container .profile ul {
+  width: 100%;
 }

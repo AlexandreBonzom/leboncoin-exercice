@@ -7,10 +7,12 @@ class Header extends React.Component {
       return (
         <div className="right-header">
           {" "}
-          <div className="header-tab">
-            <i className="fas fa-user-circle fa-2x" />
-            <span>{this.props.username}</span>
-          </div>
+          <Link to="/my_account">
+            <div className="header-tab">
+              <i className="fas fa-user-circle fa-2x" />
+              <span>{this.props.username}</span>
+            </div>{" "}
+          </Link>
           <div className="header-tab" onClick={this.props.handleLogOut}>
             Se Deconnecter
           </div>

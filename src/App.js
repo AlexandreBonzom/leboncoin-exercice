@@ -7,7 +7,8 @@ import Header from "./components/Header";
 import LogIn from "./containers/LogIn";
 import Publish from "./containers/Publish";
 import Cookies from "js-cookie";
-import Profile from "./containers/Profile";
+
+import MyAccount from "./containers/MyAccount";
 
 import "./App.css";
 
@@ -70,14 +71,21 @@ class App extends Component {
                   />
                 )}
               />
-              <Route
-                path="/profile/:id"
-                render={props => <Profile {...props} />}
-              />
+
               <Route
                 path="/publish"
                 render={props => (
                   <Publish {...props} token={this.state.token} />
+                )}
+              />
+              <Route
+                path="/my_account"
+                render={props => (
+                  <MyAccount
+                    {...props}
+                    token={this.state.token}
+                    username={this.state.username}
+                  />
                 )}
               />
             </Switch>
