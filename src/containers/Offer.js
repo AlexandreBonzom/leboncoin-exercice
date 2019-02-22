@@ -26,10 +26,7 @@ class Offer extends React.Component {
           {this.state.product.pictures.map((picture, index) => {
             return (
               <div key={index}>
-                <img
-                  src={picture.secure_url}
-                  alt={"product-picture " + index}
-                />
+                <img src={picture} alt={"product-picture " + index} />
               </div>
             );
           })}
@@ -42,7 +39,7 @@ class Offer extends React.Component {
       return (
         <img
           className="unique-image"
-          src={this.state.product.pictures[0].secure_url}
+          src={this.state.product.pictures[0]}
           alt={"product-picture"}
         />
       );
