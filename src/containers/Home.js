@@ -38,7 +38,7 @@ class Home extends React.Component {
     const newPage = page;
     this.setState({ page: newPage }, async () => {
       const response = await this.updateOffers();
-      const newOffers = response.offers;
+      const newOffers = response;
 
       this.setState({
         offers: newOffers
@@ -63,7 +63,7 @@ class Home extends React.Component {
       this.setState(newState, async () => {
         const response = await this.updateOffers();
 
-        const newOffers = response.offers;
+        const newOffers = response;
         this.setState({
           offers: newOffers
         });
@@ -76,7 +76,7 @@ class Home extends React.Component {
   handleSearchClick = async () => {
     const response = await this.updateOffers();
 
-    const newOffers = response.offers;
+    const newOffers = response;
 
     const newTotalPages = Math.ceil(response.count / 25);
     this.setState({
