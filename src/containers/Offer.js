@@ -36,7 +36,7 @@ class Offer extends React.Component {
         </Carousel>
       );
     } else if (
-      (this.state.product.pictures.length = 1) &&
+      this.state.product.pictures.length === 1 &&
       this.state.product.pictures[0]
     ) {
       return (

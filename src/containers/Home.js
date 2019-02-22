@@ -16,16 +16,17 @@ class Home extends React.Component {
     sorted: "date-desc"
   };
   componentDidMount = async () => {
-    const response = await axios
+    const result = await axios
       .get(
         `https://leboncoin-api-replica.herokuapp.com/offer/with-count?skip=0&limit=25&sort=${
           this.state.sorted
         }`
       )
       .then(response => response.data);
-    const newOffers = response.offers;
 
-    const newTotalPages = Math.ceil(response.count / 25);
+    const newOffers = result;
+
+    const newTotalPages = Math.ceil(result.count / 25);
 
     this.setState({
       offers: newOffers,

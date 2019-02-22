@@ -59,7 +59,7 @@ class Publish extends React.Component {
           <div className="image-article">
             <img src={this.state.files[i]} alt="Annonce" />
             <i
-              class="fas fa-times-circle"
+              className="fas fa-times-circle"
               onClick={() => {
                 // En cliquant sur l'image, le fichier sera supprimé
                 const newFiles = [...this.state.files];
