@@ -18,7 +18,7 @@ class Home extends React.Component {
   componentDidMount = async () => {
     const response = await axios
       .get(
-        `https://leboncoin-api.herokuapp.com/api/offer/with-count?skip=0&limit=25&sort=${
+        `https://leboncoin-api-replica.herokuapp.com/offer/with-count?skip=0&limit=25&sort=${
           this.state.sorted
         }`
       )
@@ -90,7 +90,7 @@ class Home extends React.Component {
   updateOffers = async () => {
     const response = await axios
       .get(
-        `https://leboncoin-api.herokuapp.com/api/offer/with-count?title=${
+        `https://leboncoin-api-replica.herokuapp.com/offer/with-count?title=${
           this.state.titleSearched
         }&priceMin=${this.state.priceMin}&priceMax=${
           this.state.priceMax

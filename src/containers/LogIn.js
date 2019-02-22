@@ -25,7 +25,7 @@ class LogIn extends React.Component {
     body.password = this.state.password;
     try {
       const response = await axios.post(
-        "https://leboncoin-api.herokuapp.com/api/user/log_in",
+        "https://leboncoin-api-replica.herokuapp.com/user/log_in",
         body
       );
       this.setState({ isCorrect: true });

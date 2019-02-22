@@ -36,7 +36,7 @@ class Publish extends React.Component {
       files: this.state.files
     };
     await axios.post(
-      `https://leboncoin-api.herokuapp.com/api/offer/publish`,
+      `https://leboncoin-api-replica.herokuapp.com/offer/publish`,
       newBody,
       { headers: { authorization: "Bearer " + this.props.token } }
     );

@@ -30,7 +30,7 @@ class SignUp extends React.Component {
       body.username = this.state.username;
       try {
         await axios.post(
-          "https://leboncoin-api.herokuapp.com/api/user/sign_up",
+          "https://leboncoin-api-replica.herokuapp.com/user/sign_up",
           body
         );
       } catch (error) {
