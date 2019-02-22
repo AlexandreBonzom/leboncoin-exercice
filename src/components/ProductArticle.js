@@ -5,10 +5,7 @@ class ProductArticle extends React.Component {
     if (this.props.productInfo.pictures.length > 0) {
       return (
         <div>
-          <img
-            src={this.props.productInfo.pictures[0].secure_url}
-            alt="product-img"
-          />
+          <img src={this.props.productInfo.pictures[0]} alt="product-img" />
         </div>
       );
     }
