@@ -77,7 +77,7 @@ class LogIn extends React.Component {
               Email ou mot de passe erroné.
             </span>
             <span className="no-count"> Vous n'avez pas de compte</span>
-            <button>
+            <button onClick={event => event.preventDefault()}>
               {" "}
               <Link to="/sign_up">Créer un compte</Link>
             </button>

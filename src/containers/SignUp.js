@@ -25,25 +25,38 @@ class SignUp extends React.Component {
     let isCorrect = true;
     if (this.state.password === this.state.confirmationPassword) {
       const body = {};
-      body.email = this.state.email;
-      body.password = this.state.password;
-      body.username = this.state.username;
-      try {
-        await axios.post(
-          "https://leboncoin-api-replica.herokuapp.com/user/sign_up",
-          body
-        );
-      } catch (error) {
+
+      if (this.state.email && this.state.password && this.state.username) {
+        body.email = this.state.email;
+        body.password = this.state.password;
+        body.username = this.state.username;
+
+        try {
+          const result = await axios.post(
+            "https://leboncoin-api-replica.herokuapp.com/user/sign_up",
+            body
+          );
+
+          if (result.data.message) {
+            isCorrect = false;
+            this.setState({ isCorrect: isCorrect });
+          }
+        } catch (error) {
+          isCorrect = false;
+          this.setState({ isCorrect: isCorrect });
+        }
+        this.setState({
+          email: "",
+          password: "",
+          username: "",
+          confirmationPassword: "",
+          isCorrect: isCorrect,
+          isIdentical: true
+        });
+      } else {
         isCorrect = false;
+        this.setState({ isCorrect: isCorrect });
       }
-      this.setState({
-        email: "",
-        password: "",
-        username: "",
-        confirmationPassword: "",
-        isCorrect: isCorrect,
-        isIdentical: true
-      });
     } else {
       this.setState({
         isIdentical: false,
@@ -68,7 +81,7 @@ class SignUp extends React.Component {
           <span>Pseudo*</span>
           <input
             type="text"
-            value={this.state.peusdo}
+            value={this.state.username}
             onChange={this.handleChangeForm}
             name="username"
           />

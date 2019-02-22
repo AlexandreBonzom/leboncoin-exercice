@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "cookies-js": "^1.2.3",
+    "heroku": "^7.22.0",
     "js-cookie": "^2.2.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",

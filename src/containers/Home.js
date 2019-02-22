@@ -25,13 +25,18 @@ class Home extends React.Component {
       .then(response => response.data);
 
     const newOffers = result;
-
-    const newTotalPages = Math.ceil(result.count / 25);
-
-    this.setState({
-      offers: newOffers,
-      totalPages: newTotalPages
-    });
+    if (newOffers) {
+      const newTotalPages = Math.ceil(result.length / 25);
+      this.setState({
+        offers: newOffers,
+        totalPages: newTotalPages
+      });
+    } else {
+      this.setState({
+        offers: newOffers,
+        totalPages: 1
+      });
+    }
   };
 
   handleChangePage = page => {
@@ -78,7 +83,7 @@ class Home extends React.Component {
 
     const newOffers = response;
 
-    const newTotalPages = Math.ceil(response.count / 25);
+    const newTotalPages = Math.ceil(response.length / 25);
     this.setState({
       offers: newOffers,
       totalPages: newTotalPages,
