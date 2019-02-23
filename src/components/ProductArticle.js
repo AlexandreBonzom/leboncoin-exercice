@@ -1,4 +1,3 @@
-const axios = require("axios");
 import React from "react";
 
 class ProductArticle extends React.Component {
