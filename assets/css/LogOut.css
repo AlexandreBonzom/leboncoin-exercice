@@ -1,0 +1,22 @@
+/* HOME LOG OUT */
+.main-section-log-out {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  font-weight: bold;
+  padding-top: 100px;
+}
+
+.main-section-log-out button {
+  color: white;
+  background-color: #4183d7;
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
+  margin: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
