@@ -19,7 +19,6 @@ class Offer extends React.Component {
     this.setState({ product: response });
   };
   renderImages = () => {
-    console.log(this.state.product.pictures.length);
     if (this.state.product.pictures.length > 1) {
       return (
         <Carousel>
@@ -40,7 +39,7 @@ class Offer extends React.Component {
         <img
           className="unique-image"
           src={this.state.product.pictures[0]}
-          alt={"product-picture"}
+          alt={"product"}
         />
       );
     }
@@ -49,7 +48,7 @@ class Offer extends React.Component {
   render() {
     if (this.state.product.hasOwnProperty("title")) {
       return (
-        <div className="offer">
+        <div className="page-width offer">
           <div className="offer-product">
             <div>
               <div className="offer-picture">{this.renderImages()}</div>
@@ -67,14 +66,14 @@ class Offer extends React.Component {
               <div>{this.state.product.description}</div>
             </div>
           </div>
-          <div className="offer-creator">
+          <div className="user-profile-card">
             <i className="fas fa-user-circle fa-3x" />
             {this.state.product.creator.account.username}
           </div>
         </div>
       );
     } else {
-      return <div className="offer">Chargement de la page</div>;
+      return <div className="offer loading-page">Chargement de la page</div>;
     }
   }
 }

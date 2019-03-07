@@ -5,22 +5,17 @@
   border-bottom: solid 1px #cad1d9;
 }
 .search-bar {
-  width: 1024px;
-  display: flex;
-  margin: 0 auto;
   height: 100%;
   padding-top: 20px;
 }
 .left-side-searchbar {
   width: 65%;
 }
-.left-side-searchbar input {
-  height: 40px;
-  border-radius: 3px;
-  border: solid 1px #cad1d9;
-}
+
 .left-side-searchbar .title-searched {
   width: calc(100% - 20px);
+  margin-top: 0;
+
   margin-bottom: 10px;
 }
 
@@ -32,14 +27,6 @@
 }
 
 .right-side-searchbar button {
-  height: 40px;
-  color: white;
-  background-color: #4183d7;
-  font-size: 13px;
-  line-height: 19px;
-  font-weight: bold;
-  border-radius: 3px;
-  border: none;
   width: 80%;
   margin-bottom: 10px;
 }

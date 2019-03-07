@@ -5,10 +5,8 @@
 }
 
 .sign_up-container form {
-  width: 1024px;
-  margin: auto;
   margin-top: 20px;
-  display: flex;
+
   flex-direction: column;
   align-items: center;
   background-color: white;
@@ -48,39 +46,15 @@
   width: 100%;
 }
 
-.sign_up-container form span {
-  font-size: 13px;
-  line-height: 19px;
-  font-weight: bold;
-  text-align: left;
-  width: 50%;
-  margin: 10px 0;
-}
-
 .sign_up-container form input {
-  text-align: left;
   width: 50%;
-  height: 40px;
-  border-radius: 3px;
-  border: solid 1px #cad1d9;
-  font-size: 13px;
-  line-height: 19px;
-  margin: 10px 0;
-  padding-left: 10px;
+
+  margin: 5px 0 10px 0;
+
   box-sizing: border-box;
 }
 .sign_up-container form .submit {
-  color: white;
-  background-color: #4183d7;
-  font-size: 13px;
-  line-height: 19px;
-  font-weight: bold;
-  border-radius: 3px;
-  border: none;
   margin: 20px;
-  padding: 10px;
-  cursor: pointer;
-  text-align: center;
 }
 
 .sign_up-container form .not-display {

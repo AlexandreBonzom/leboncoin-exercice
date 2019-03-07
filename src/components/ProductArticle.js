@@ -20,7 +20,13 @@ class ProductArticle extends React.Component {
           <div className="product-price">
             {this.props.productInfo.price + " €"}
           </div>
-          <div className="product-description">
+          <div
+            className={
+              this.props.isEllipsis
+                ? "product-description ellipsis"
+                : "product-description"
+            }
+          >
             {this.props.productInfo.description}
           </div>
         </div>

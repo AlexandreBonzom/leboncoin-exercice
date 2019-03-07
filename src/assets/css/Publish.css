@@ -2,16 +2,15 @@
 
 .publish-container {
   min-height: calc(100vh - 60px);
+
   font-size: 13px;
   line-height: 19px;
   font-weight: bold;
 }
 
 .publish-container .publication {
-  display: flex;
   flex-direction: column;
-  width: 1024px;
-  margin: 20px auto;
+  margin-top: 20px;
   background-color: white;
   border: solid 1px #eeeeee;
 }
@@ -42,20 +41,11 @@
 
 .publish-container .publication .main-info-publication input {
   height: 30px;
-  font-size: 13px;
-  line-height: 19px;
   margin: 10px 0;
-  border-radius: 3px;
-  border: solid 1px #eeeeee;
-  padding-left: 5px;
 }
 .publish-container .publication .main-info-publication textarea {
-  border: solid 1px #eeeeee;
-  border-radius: 3px;
-  font-size: 13px;
-  line-height: 19px;
   margin: 10px 0;
-  padding-left: 5px;
+  height: inherit;
 }
 
 .publish-container
@@ -65,11 +55,7 @@
   height: 30px;
   background-color: #eeeeee;
   border: solid 1px #cacaca;
-  font-size: 13px;
-  line-height: 19px;
-  font-weight: bold;
   border-radius: 3px;
-
   width: 40%;
   margin-bottom: 10px;
   display: flex;
@@ -79,14 +65,6 @@
 }
 
 .publish-container .publication .main-info-publication button {
-  height: 40px;
-  color: white;
-  background-color: #4183d7;
-  font-size: 13px;
-  line-height: 19px;
-  font-weight: bold;
-  border-radius: 3px;
-  border: none;
   width: 80%;
   margin-bottom: 10px;
   cursor: pointer;
@@ -94,7 +72,6 @@
 
 .publish-container .publication .main-info-publication ul {
   width: 100%;
-
   display: flex;
   flex-wrap: wrap;
 }

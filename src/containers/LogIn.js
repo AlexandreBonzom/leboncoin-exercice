@@ -28,12 +28,14 @@ class LogIn extends React.Component {
         "https://leboncoin-api-replica.herokuapp.com/user/log_in",
         body
       );
+
       this.setState({ isCorrect: true });
       await this.props.handleLogin(
         response.data.token,
         response.data._id,
         response.data.account.username
       );
+      this.props.history.push("/");
     } catch (error) {
       this.setState({ email: "", password: "", isCorrect: false });
     }
@@ -43,24 +45,26 @@ class LogIn extends React.Component {
     if (!this.props.token) {
       return (
         <div className="log-in-container">
-          <form>
+          <form className="page-width">
             <span className="connexion">Connexion</span>
-            <span>Adresse email </span>
+            <span className="label">Adresse email </span>
             <input
+              className="input-fields"
               name="email"
               type="email"
               value={this.state.email}
               onChange={this.handleChange}
             />
-            <span>Mot de passe </span>
+            <span className="label">Mot de passe </span>
             <input
+              className="input-fields"
               name="password"
               type="password"
               value={this.state.password}
               onChange={this.handleChange}
             />
             <input
-              className="submit"
+              className="blue-button submit"
               type="submit"
               value="Se Connecter"
               onClick={
@@ -76,8 +80,11 @@ class LogIn extends React.Component {
             >
               Email ou mot de passe erroné.
             </span>
-            <span className="no-count"> Vous n'avez pas de compte</span>
-            <button onClick={event => event.preventDefault()}>
+            <span className="label no-count"> Vous n'avez pas de compte</span>
+            <button
+              className="inverted-blue-button"
+              onClick={event => event.preventDefault()}
+            >
               {" "}
               <Link to="/sign_up">Créer un compte</Link>
             </button>

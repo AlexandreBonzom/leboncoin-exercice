@@ -1,7 +1,4 @@
 .header {
-  width: 1024px;
-  margin: 0 auto;
-  display: flex;
   font-size: 13px;
   line-height: 19px;
   font-weight: 600;
@@ -15,6 +12,10 @@
 
 .header .header-tab {
   margin: 0 0 0 20px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header .right-header .header-tab {
@@ -27,6 +28,7 @@
   border-color: white;
   padding: 0 20px;
   border-width: 0px 1px 0px 1px;
+  box-sizing: border-box;
 }
 
 .header .right-header {
@@ -43,4 +45,27 @@
   height: 60px;
   width: 120px;
   object-fit: cover;
+}
+
+.header .right-header .currenttab {
+  border-bottom: 10px solid #fafafa;
+  height: 100%;
+}
+
+.header .currenttab {
+  border-bottom: 10px solid #fafafa;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .header-tab:hover {
+  border-bottom: 3px solid #e7ebee;
+  cursor: pointer;
+}
+.header .header-tab.currenttab:hover {
+  border-bottom: 10px solid #fafafa;
+  cursor: pointer;
 }

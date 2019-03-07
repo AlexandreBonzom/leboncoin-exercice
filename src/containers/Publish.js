@@ -74,11 +74,12 @@ class Publish extends React.Component {
     if (this.props.token) {
       return (
         <div className="publish-container">
-          <div className="publication">
+          <div className="page-width publication">
             <span className="header-publication">Votre annonce</span>
             <div className="main-info-publication">
               <span>Titre de l'annonce</span>
               <input
+                className="input-fields"
                 type="text"
                 name="title"
                 value={this.state.title}
@@ -86,6 +87,7 @@ class Publish extends React.Component {
               />
               <span>Texte de l'annonce</span>
               <textarea
+                className="input-fields"
                 name="description"
                 value={this.state.description}
                 onChange={this.handleChange}
@@ -93,6 +95,7 @@ class Publish extends React.Component {
               />
               <span>Prix</span>
               <input
+                className="input-fields"
                 type="text"
                 name="price"
                 value={this.state.price}
@@ -109,7 +112,9 @@ class Publish extends React.Component {
                 <span className="add-files">Charger des photos...</span>
               </ReactFileReader>
 
-              <button onClick={this.handleClick}>Publier l'annonce</button>
+              <button className="blue-button" onClick={this.handleClick}>
+                Publier l'annonce
+              </button>
             </div>
           </div>
         </div>

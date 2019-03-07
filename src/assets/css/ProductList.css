@@ -1,6 +1,5 @@
 .product-list {
-  width: 1024px;
-  margin: 0 auto;
+  flex-direction: column;
   padding-top: 20px;
 }
 
@@ -9,9 +8,15 @@
   height: 130px;
   padding: 10px;
   border: 1px solid #dddddd;
-  border-collapse: collapse;
+
   box-sizing: border-box;
   background-color: white;
+}
+
+.product-article:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  position: relative;
+  z-index: 2;
 }
 
 .product-article .img-product {
@@ -48,4 +53,23 @@
   line-height: 20px;
   font-weight: bold;
   margin: 10px 0px;
+}
+.my-offer-null {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-offer-null .go-to-publish {
+  padding-top: 20px;
+  text-decoration: underline;
+  color: #4183d7;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  width: 300px;
 }

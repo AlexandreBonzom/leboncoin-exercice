@@ -118,7 +118,7 @@ class Home extends React.Component {
             handleChangeSearch={this.handleChangeSearch}
             handleSearchClick={this.handleSearchClick}
           />
-          <ul className="product-list">
+          <ul className="page-width product-list ">
             {this.state.offers.map(product => {
               return (
                 <li key={product._id}>
@@ -147,7 +147,11 @@ class Home extends React.Component {
             handleChangeSearch={this.handleChangeSearch}
             handleSearchClick={this.handleSearchClick}
           />{" "}
-          <div>Aucun Resultat Disponible.</div>
+          <div className="page-width no-result">
+            <span>
+              Nous avons trouvé aucun résultat coresspondant à votre recherche.
+            </span>
+          </div>
         </div>
       );
     }
