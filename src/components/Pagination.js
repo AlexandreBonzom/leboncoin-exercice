@@ -40,7 +40,7 @@ class Pagination extends React.Component {
 
   render() {
     return (
-      <div className="pagination">
+      <div className="pagination page-width">
         <i
           className={
             this.props.page === 1

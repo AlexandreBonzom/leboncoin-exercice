@@ -4,10 +4,10 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="search-bar-container">
-        <div className="search-bar">
+        <div className="page-width search-bar">
           <div className="left-side-searchbar">
             <input
-              className="title-searched"
+              className="input-fields title-searched "
               type="text"
               placeholder="Que cherchez-vous?"
               value={this.props.title}
@@ -17,8 +17,9 @@ class SearchBar extends React.Component {
             <div>
               Prix entre{" "}
               <input
+                className="input-fields "
                 type="text"
-                placeholder="PriceMin"
+                placeholder="Prix Minimum €"
                 name="priceMin"
                 value={this.props.priceMin}
                 onChange={this.props.handleChangeSearch}
@@ -26,7 +27,8 @@ class SearchBar extends React.Component {
               et{" "}
               <input
                 type="text"
-                placeholder="PriceMax"
+                className="input-fields"
+                placeholder="Prix Maximum €"
                 name="priceMax"
                 value={this.props.priceMax}
                 onChange={this.props.handleChangeSearch}
@@ -34,7 +36,12 @@ class SearchBar extends React.Component {
             </div>
           </div>
           <div className="right-side-searchbar">
-            <button onClick={this.props.handleSearchClick}>Rechercher</button>
+            <button
+              className="blue-button"
+              onClick={this.props.handleSearchClick}
+            >
+              Rechercher
+            </button>
             <select
               name="sorted"
               value={this.props.sorted}

@@ -51,6 +51,7 @@ class App extends Component {
               username={this.state.username}
               handleLogOut={this.handleLogOut}
               token={this.state.token}
+              location={this.location}
             />
 
             <Switch>
@@ -59,7 +60,12 @@ class App extends Component {
                 path="/"
                 render={props => <Home {...props} token={this.state.token} />}
               />
-              <Route path="/sign_up" render={props => <SignUp {...props} />} />
+              <Route
+                path="/sign_up"
+                render={props => (
+                  <SignUp {...props} handleLogin={this.handleLogIn} />
+                )}
+              />
               <Route path="/offer/:id" render={props => <Offer {...props} />} />
               <Route
                 path="/log_in"

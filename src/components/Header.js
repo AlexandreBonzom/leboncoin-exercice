@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class Header extends React.Component {
   renderLogInOut = () => {
@@ -8,7 +8,13 @@ class Header extends React.Component {
         <div className="right-header">
           {" "}
           <Link to="/my_account">
-            <div className="header-tab">
+            <div
+              className={
+                this.props.location.pathname === "/my_account"
+                  ? "header-tab currenttab"
+                  : "header-tab"
+              }
+            >
               <i className="fas fa-user-circle fa-2x" />
               <span>{this.props.username}</span>
             </div>{" "}
@@ -22,10 +28,22 @@ class Header extends React.Component {
       return (
         <div className="right-header">
           {" "}
-          <div className="header-tab">
+          <div
+            className={
+              this.props.location.pathname === "/sign_up"
+                ? "header-tab currenttab"
+                : "header-tab"
+            }
+          >
             <Link to="/sign_up">Creer un compte</Link>
           </div>
-          <div className="header-tab">
+          <div
+            className={
+              this.props.location.pathname === "/log_in"
+                ? "header-tab currenttab"
+                : "header-tab"
+            }
+          >
             <Link to="/log_in">Se Connecter</Link>
           </div>
         </div>
@@ -36,7 +54,7 @@ class Header extends React.Component {
   render() {
     return (
       <header>
-        <div className="header">
+        <div className="page-width header">
           <div className="left-header">
             <div className="logo-leboncoin">
               <Link to="/">
@@ -46,10 +64,22 @@ class Header extends React.Component {
                 />
               </Link>
             </div>{" "}
-            <div className="header-tab">
+            <div
+              className={
+                this.props.location.pathname === "/publish"
+                  ? "header-tab currenttab"
+                  : "header-tab"
+              }
+            >
               <Link to="/publish">Déposer une annonce</Link>
             </div>
-            <div className="header-tab">
+            <div
+              className={
+                this.props.location.pathname === "/"
+                  ? "header-tab currenttab"
+                  : "header-tab"
+              }
+            >
               <Link to="/">Offres </Link>
             </div>
           </div>
@@ -60,4 +90,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

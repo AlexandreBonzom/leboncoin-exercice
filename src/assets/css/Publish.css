@@ -1,0 +1,85 @@
+/* publish */
+
+.publish-container {
+  min-height: calc(100vh - 60px);
+
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+}
+
+.publish-container .publication {
+  flex-direction: column;
+  margin-top: 20px;
+  background-color: white;
+  border: solid 1px #eeeeee;
+}
+
+.publish-container .publication .main-info-publication .image-article {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.publish-container .publication .main-info-publication .fa-times-circle {
+  position: absolute;
+  right: 10px;
+  color: orange;
+}
+
+.publish-container .publication .header-publication {
+  color: white;
+  background-color: #666666;
+  padding: 10px;
+}
+
+.publish-container .publication .main-info-publication {
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.publish-container .publication .main-info-publication input {
+  height: 30px;
+  margin: 10px 0;
+}
+.publish-container .publication .main-info-publication textarea {
+  margin: 10px 0;
+  height: inherit;
+}
+
+.publish-container
+  .publication
+  .main-info-publication
+  .react-file-reader-button {
+  height: 30px;
+  background-color: #eeeeee;
+  border: solid 1px #cacaca;
+  border-radius: 3px;
+  width: 40%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.publish-container .publication .main-info-publication button {
+  width: 80%;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.publish-container .publication .main-info-publication ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.publish-container .publication .main-info-publication li img {
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  border: solid 1px #eeeeee;
+}

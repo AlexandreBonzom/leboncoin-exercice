@@ -37,6 +37,15 @@ class SignUp extends React.Component {
             body
           );
 
+          if (result.data.token) {
+            await this.props.handleLogin(
+              result.data.token,
+              result.data._id,
+              result.data.account.username
+            );
+
+            this.props.history.push("/");
+          }
           if (result.data.message) {
             isCorrect = false;
             this.setState({ isCorrect: isCorrect });
@@ -69,26 +78,29 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className="sign_up-container">
-        <form>
+        <form className="page-width">
           <span className="create-account">Créer un compte</span>
-          <span>Adresse email*</span>
+          <span className="label">Adresse email*</span>
           <input
+            className="input-fields"
             type="email"
             value={this.state.email}
             onChange={this.handleChangeForm}
             name="email"
           />
-          <span>Pseudo*</span>
+          <span className="label">Pseudo*</span>
           <input
             type="text"
+            className="input-fields"
             value={this.state.username}
             onChange={this.handleChangeForm}
             name="username"
           />
           <span className="password-line">
             <span className="password-left">
-              <span>Mot de passe*</span>
+              <span className="label">Mot de passe*</span>
               <input
+                className="input-fields"
                 type="password"
                 value={this.state.password}
                 onChange={this.handleChangeForm}
@@ -97,8 +109,9 @@ class SignUp extends React.Component {
             </span>
             <span className="password-right">
               {" "}
-              <span>Confirmer le mot de passe*</span>
+              <span className="label">Confirmer le mot de passe*</span>
               <input
+                className="input-fields"
                 type="password"
                 value={this.state.confirmationPassword}
                 onChange={this.handleChangeForm}
@@ -107,9 +120,9 @@ class SignUp extends React.Component {
             </span>
           </span>
           <input
+            className="blue-button submit"
             type="submit"
             value="S'incrire"
-            className="submit"
             onClick={this.handleSubmitSignUp}
           />
           <span
