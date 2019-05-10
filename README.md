@@ -41,7 +41,7 @@ npm start
 
 [Web Site Demo](https://leboncoin-client-replica.herokuapp.com/) The master branch is hosted on heroku. The first loading could be long.
 
-<p align="center">
+
   
 ![offers demo](https://media.giphy.com/media/lTdEGENVXKJVBtF0O9/giphy.gif)
 
@@ -50,7 +50,7 @@ npm start
 You need to be logged to publish offers
 
 ![pubish demo](https://media.giphy.com/media/LkSmkBlPSmuUuVj53Z/giphy.gif)
-</p>
+
 
 ## Built With
 
