@@ -42,7 +42,7 @@ npm start
 [Demo  of the web site](https://leboncoin-client-replica.herokuapp.com/) The master branch is hosted on heroku. The first loading could be long.
 
 
-![offers demo](http://www.giphy.com/gifs/lTdEGENVXKJVBtF0O9.gif)
+![offers demo](https://media.giphy.com/media/lTdEGENVXKJVBtF0O9/giphy.gif)
 
 ## Built With
 
