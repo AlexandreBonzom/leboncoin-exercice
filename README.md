@@ -1,35 +1,62 @@
-This project was started with React.
-This is part of a full stack exercise performed during a bootcamp.
-This is the front part.
-For the API part, go to:
-https://github.com/AlexandreBonzom/leboncoin-api
-Link to the website:
-https://leboncoin-client-replica.herokuapp.com/
+# LEBONCOIN REPLICA
 
-Here are the main features:
+The purpose of this repo is to replicate the famous french website "Leboncoin" using React for the front part and Node.js with Expresss and MongoDB for the server and DB.
 
 
-### React the environment
-BrowserRoute, Switch, Route and Link are used to navigate  through this website.
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Installing
+
+A step by step series of examples that tell you how to get a development env running
+
+First clone the repo
+
+```
+git clone https://github.com/AlexandreBonzom/leboncoin-exercice.git 
+```
+
+And then install all packages on your machine
+
+```
+npm install
+```
+
+or
+
+```
+yarn install
+```
+
+End with an example of getting some data out of the system or using it for a little demo
+
+## Launch Application
+
+```
+npm start
+```
+
+## Demo
+
+[Demo  of the web site](https://leboncoin-client-replica.herokuapp.com/) The master branch is hosted on heroku. The first loading could be long.
 
 
-### Login
-Send the request to the server with an email and a password.
-If the email or email is not correct, a message will appear.
+## Built With
 
-### Register
-Simple registration form. Also, if the email appears in the database, a message will appear
-
-### Offer
-The offers are listed (with a map) with the same component with different accessories.
-Ability to filter offers. 
-
-Possibility to see one offer in particular; A carousel is displayed if there are several pictures for the same offer.
-
-### Publis Offer
-Only available when connected to the site or user will be redirected to Log In page. 
-Pictures are saved encoded in base 64 before to be send to back.
+- [React](https://reactjs.org/) - This project was bootstrapped with Create React App.
 
 
-### User's page
-The same component as the offer list is reused but with different parameters from the description text for the ellipsis.
+### Server side
+
+[Server with DB](https://github.com/AlexandreBonzom/leboncoin-api) - Back-end of the project.
+
+
+### Functionalities
+* React  router : Navigation through this website is done thanskl to React router.
+* Log-in  
+* Register
+* Offers List with filters 
+* Publish Offer with descritpion and also pictures, hosted on Cloudinary.
+* User's page
+
