@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { Carousel } from "react-responsive-carousel";
-import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 
 class Offer extends React.Component {
   state = {

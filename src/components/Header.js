@@ -1,25 +1,25 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
-class Header extends React.Component {
-  renderLogInOut = () => {
-    if (this.props.token) {
+const Header = props => {
+  const renderLogInOut = () => {
+    if (props.token) {
       return (
         <div className="right-header">
           {" "}
           <Link to="/my_account">
             <div
               className={
-                this.props.location.pathname === "/my_account"
+                props.location.pathname === "/my_account"
                   ? "header-tab currenttab"
                   : "header-tab"
               }
             >
               <i className="fas fa-user-circle fa-2x" />
-              <span>{this.props.username}</span>
+              <span>{props.username}</span>
             </div>{" "}
           </Link>
-          <div className="header-tab" onClick={this.props.handleLogOut}>
+          <div className="header-tab" onClick={props.handleLogOut}>
             Se Deconnecter
           </div>
         </div>
@@ -30,7 +30,7 @@ class Header extends React.Component {
           {" "}
           <div
             className={
-              this.props.location.pathname === "/sign_up"
+              props.location.pathname === "/sign_up"
                 ? "header-tab currenttab"
                 : "header-tab"
             }
@@ -39,7 +39,7 @@ class Header extends React.Component {
           </div>
           <div
             className={
-              this.props.location.pathname === "/log_in"
+              props.location.pathname === "/log_in"
                 ? "header-tab currenttab"
                 : "header-tab"
             }
@@ -51,43 +51,41 @@ class Header extends React.Component {
     }
   };
 
-  render() {
-    return (
-      <header>
-        <div className="page-width header">
-          <div className="left-header">
-            <div className="logo-leboncoin">
-              <Link to="/">
-                <img
-                  src="https://weborama.com/wp-content/uploads/2017/08/leboncoin-logo-blanc.png"
-                  alt="logo-leboncoin"
-                />
-              </Link>
-            </div>{" "}
-            <div
-              className={
-                this.props.location.pathname === "/publish"
-                  ? "header-tab currenttab"
-                  : "header-tab"
-              }
-            >
-              <Link to="/publish">Déposer une annonce</Link>
-            </div>
-            <div
-              className={
-                this.props.location.pathname === "/"
-                  ? "header-tab currenttab"
-                  : "header-tab"
-              }
-            >
-              <Link to="/">Offres </Link>
-            </div>
+  return (
+    <header>
+      <div className="page-width header">
+        <div className="left-header">
+          <div className="logo-leboncoin">
+            <Link to="/">
+              <img
+                src="https://weborama.com/wp-content/uploads/2017/08/leboncoin-logo-blanc.png"
+                alt="logo-leboncoin"
+              />
+            </Link>
+          </div>{" "}
+          <div
+            className={
+              props.location.pathname === "/publish"
+                ? "header-tab currenttab"
+                : "header-tab"
+            }
+          >
+            <Link to="/publish">Déposer une annonce</Link>
           </div>
-          {this.renderLogInOut()}
+          <div
+            className={
+              props.location.pathname === "/"
+                ? "header-tab currenttab"
+                : "header-tab"
+            }
+          >
+            <Link to="/">Offres </Link>
+          </div>
         </div>
-      </header>
-    );
-  }
-}
+        {renderLogInOut()}
+      </div>
+    </header>
+  );
+};
 
 export default withRouter(Header);
