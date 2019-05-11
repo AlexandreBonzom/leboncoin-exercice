@@ -1,38 +1,35 @@
 import React from "react";
 
-class ProductArticle extends React.Component {
-  renderImages = () => {
-    if (this.props.productInfo.pictures.length > 0) {
+const ProductArticle = props => {
+  const renderImages = () => {
+    if (props.productInfo.pictures.length > 0) {
       return (
         <div>
-          <img src={this.props.productInfo.pictures[0]} alt="product-img" />
+          <img src={props.productInfo.pictures[0]} alt="product-img" />
         </div>
       );
     }
   };
-  render() {
-    return (
-      <div className="product-article">
-        <div className="img-product">{this.renderImages()}</div>
-        <div className="product-information">
-          <div className="product-name">{this.props.productInfo.title}</div>
 
-          <div className="product-price">
-            {this.props.productInfo.price + " €"}
-          </div>
-          <div
-            className={
-              this.props.isEllipsis
-                ? "product-description ellipsis"
-                : "product-description"
-            }
-          >
-            {this.props.productInfo.description}
-          </div>
+  return (
+    <div className="product-article">
+      <div className="img-product">{renderImages()}</div>
+      <div className="product-information">
+        <div className="product-name">{props.productInfo.title}</div>
+
+        <div className="product-price">{props.productInfo.price + " €"}</div>
+        <div
+          className={
+            props.isEllipsis
+              ? "product-description ellipsis"
+              : "product-description"
+          }
+        >
+          {props.productInfo.description}
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default ProductArticle;

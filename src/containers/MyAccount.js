@@ -10,7 +10,7 @@ class MyAccount extends React.Component {
 
   handleDelete = async (offerId, index) => {
     let newOffers = [...this.state.myOffers];
-    const response = await axios.post(
+    await axios.post(
       "https://leboncoin-api-replica.herokuapp.com/offer/delete",
       { id: offerId },
 
