@@ -53,7 +53,9 @@ You need to be logged to publish offers
 
 ## Built With
 
-- [React](https://reactjs.org/) - This project was bootstrapped with Create React App.
+- [React](https://reactjs.org/) - This project was bootstrapped with Create React App
+- HTML / CSS
+- Javascript
 
 
 ### Server side
